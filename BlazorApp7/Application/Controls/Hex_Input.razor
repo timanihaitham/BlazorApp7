@@ -1,0 +1,48 @@
+﻿
+
+<div class="content mt-2 mx-auto">
+        <input class="input" placeholder=@PlaceHolder  name=@Name value=@Value maxlength=@MaxLength type=@Type @attributes=@Vals>
+        <span class="border"></span>
+</div>
+
+
+
+@code
+{
+
+    private bool _Required;
+
+    [Parameter]
+    public string PlaceHolder { get; set; } = "";
+
+    [Parameter]
+    public string Name { get; set; } = "";
+
+    [Parameter]
+    public string Value { get; set; } = "";
+
+    [Parameter]
+    public int MaxLength { get; set; } = 50000;
+
+    [Parameter]
+    public string Type { get; set; } = "Text";
+
+    [Parameter]
+    public string width { get; set; } = "100%";
+
+    [Parameter]
+    public bool Required
+    {
+        get
+        {
+            return _Required;
+        }
+        set
+        {
+            if (value)
+                Vals = new Dictionary<string, object>() { { "required", "required" } };
+            _Required = value;
+        }
+    }
+    private Dictionary<string, object> Vals;
+}

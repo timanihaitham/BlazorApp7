@@ -1,0 +1,50 @@
+﻿
+<div class=@_Type style="margin-top:10px">
+    <strong>@Caption</strong>@Text
+</div>
+@code
+{
+
+    private string _Type
+    {
+        get
+        {
+            string _Result="";
+            switch (Type)
+            {
+                case HexaSystems.Application.Classes.ApplicatonInfo.MessageType.Success:
+                    {
+                        _Result = "alert alert-success";
+                        break;
+                    }
+                case HexaSystems.Application.Classes.ApplicatonInfo.MessageType.Error:
+                    {
+                        _Result = "alert alert-danger";
+                        break;
+                    }
+                case HexaSystems.Application.Classes.ApplicatonInfo.MessageType.Warning:
+                    {
+                        _Result =  "alert alert-warning";
+                        break;
+                    }
+                case HexaSystems.Application.Classes.ApplicatonInfo.MessageType.Info:
+                    {
+                        _Result =  "alert alert-info";
+                        break;
+                    }
+            }
+            return _Result;
+
+        }
+    }
+    
+    [Parameter]
+    public string Text { get; set; }
+
+    [Parameter]
+    public string Caption { get; set; }
+
+    [Parameter]
+    public HexaSystems.Application.Classes.ApplicatonInfo.MessageType Type { get; set; }
+
+}

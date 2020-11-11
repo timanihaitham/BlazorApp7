@@ -1,0 +1,34 @@
+﻿@page "/"
+
+
+<form style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);" method="get" action="/fetchdata">
+
+
+
+    <Hex_Input Name="txtUser" PlaceHolder="User Code" MaxLength="10" Required="true"></Hex_Input>
+    <Hex_Input Name="txtPWD" Type="password" PlaceHolder="Password" MaxLength="40" Required="true"></Hex_Input>
+
+
+    <div align="center">
+        <Hex_Button Value="Sign in"
+                    Type="submit">
+
+
+        </Hex_Button>
+    </div>
+    <div align="center" style="font-family:Cambria;font-size:12px;vertical-align:central;margin-top:20%;">
+        Designed And Developed By HEXASystems sal <br>
+        +961 3 77 28 25<br>
+        Stock and Sales<br>
+        Version 1.0
+    </div>
+</form>
+@code
+{
+    
+}

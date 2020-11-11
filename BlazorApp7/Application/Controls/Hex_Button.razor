@@ -1,0 +1,16 @@
+﻿
+
+<button type=@Type class="btn btn-primary btn-sm" @attributes="Attributes" style="margin-top:10px">@Value</button>
+
+@code {
+
+    [Parameter]
+    public string Type { get; set; }
+
+    [Parameter]
+    public string Value { get; set; }
+
+    [Parameter]
+    public Dictionary<string, object> Attributes { get; set; }
+
+}
