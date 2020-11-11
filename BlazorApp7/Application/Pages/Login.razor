@@ -15,7 +15,7 @@
 
 
     <div align="center">
-        <Hex_Button Value="Sign in"
+        <Hex_Button @onclick="_Login" Value="Sign in"
                     Type="submit">
 
 
@@ -30,5 +30,8 @@
 </form>
 @code
 {
-    
+    private void _Login()
+    {
+        Application.Classes.ApplicatonInfo.LoggedUser = Application.Classes.User.CheckAndReturnUser("", "");
+    }
 }
