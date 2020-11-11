@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace HexaSystems.Application.Classes
+﻿namespace HexaSystems.Application.Classes
 {
     public class ApplicatonInfo
     {
@@ -17,7 +12,7 @@ namespace HexaSystems.Application.Classes
             Success = 3
         }
 
-       static public User LoggedUser;
+        static public User LoggedUser;
     }
 
 }

@@ -10,8 +10,8 @@
 
 
 
-    <Hex_Input Name="txtUser" PlaceHolder="User Code" MaxLength="10" Required="true"></Hex_Input>
-    <Hex_Input Name="txtPWD" Type="password" PlaceHolder="Password" MaxLength="40" Required="true"></Hex_Input>
+    <Hex_Input @bind-="@_UserCode" Name="txtUser" PlaceHolder="User Code" MaxLength="10" Required="true"></Hex_Input>
+    <Hex_Input @bind-="@_UserPWD" Name="txtPWD" Type="password" PlaceHolder="Password" MaxLength="40" Required="true"></Hex_Input>
 
 
     <div align="center">
@@ -30,8 +30,15 @@
 </form>
 @code
 {
+    private string _UserCode,_UserPWD ;
+
     private void _Login()
     {
-        Application.Classes.ApplicatonInfo.LoggedUser = Application.Classes.User.CheckAndReturnUser("", "");
+        Application.Classes.ApplicatonInfo.LoggedUser = Application.Classes.User.CheckAndReturnUser(_UserCode, _UserPWD);
+
+        if (Application.Classes.ApplicatonInfo.LoggedUser != null)
+        {
+
+        }
     }
 }
