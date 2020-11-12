@@ -1,4 +1,8 @@
-﻿namespace HexaSystems.Application.Classes
+﻿using System;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+
+namespace HexaSystems.Application.Classes
 {
     public class User
     {
@@ -9,6 +13,7 @@
 
         public static User CheckAndReturnUser(string Code, string PWD)
         {
+  
             return new User();
         }
     }
