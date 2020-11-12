@@ -10,17 +10,17 @@
 
 
 
-    @*<Hex_Input @bind-="@_UserCode" Name="txtUser" PlaceHolder="User Code" MaxLength="10" Required="true"></Hex_Input>*@
-        <Hex_Input @bind-="@_UserPWD" Name="txtPWD" Type="password" PlaceHolder="Password" MaxLength="40" Required="true"></Hex_Input>
+        <Hex_Input Name="txtUser" PlaceHolder="User Code" MaxLength="10" Required="true"></Hex_Input>
+        <Hex_Input Name="txtPWD" Type="password" PlaceHolder="Password" MaxLength="40" Required="true"></Hex_Input>
 
 
-    @*<div align="center">
-            <Hex_Button @onclick="_Login" Value="Sign in"
+    <div align="center">
+            <Hex_Button  Value="Sign in"
                         Type="submit">
 
 
             </Hex_Button>
-        </div>*@
+        </div>
     <div align="center" style="font-family:Cambria;font-size:12px;vertical-align:central;margin-top:20%;">
         Designed And Developed By HEXASystems sal <br>
         +961 3 77 28 25<br>
@@ -34,11 +34,8 @@
 
     private void _Login()
     {
-        Application.Classes.ApplicatonInfo.LoggedUser = Application.Classes.User.CheckAndReturnUser(_UserCode, _UserPWD);
+         
 
-        if (Application.Classes.ApplicatonInfo.LoggedUser != null)
-        {
-
-        }
+    
     }
 }
