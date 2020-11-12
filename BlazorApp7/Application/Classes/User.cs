@@ -25,10 +25,10 @@ namespace HexaSystems.Application.Classes
                     if (DR.Read())
                     {
                         Usr = new User();
-                        Usr.UserID = (int)DR[0];
-                        Usr.Code = DR[1].ToString();
-                        Usr.Name = DR[2].ToString();
-                        Usr.Active = (bool)DR[3];
+                        Usr.UserID = (int)DR["Usr_ID"];
+                        Usr.Code = DR["Usr_Code"].ToString();
+                        Usr.Name = DR["Usr_Name"].ToString();
+                        Usr.Active = (bool)DR["Usr_State"];
                     }
                     Cn.Close();
                 }
