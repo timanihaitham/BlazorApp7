@@ -2,17 +2,17 @@
 {
     public class DBMS
     {
-        class SQL
+        public class SQL
         {
-            string Server { get; set; }
+            public string Server { get; set; }
 
-            string Database { get; set; }
+            public string Database { get; set; }
 
-            string User { get; set; }
+            public string User { get; set; }
 
-            string PWD { get; set; }
+            public string PWD { get; set; }
 
-            string ConnectionString
+            public string ConnectionString
             {
                 get
                 {

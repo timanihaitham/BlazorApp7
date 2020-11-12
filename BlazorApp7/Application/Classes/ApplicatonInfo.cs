@@ -1,6 +1,7 @@
 ﻿namespace HexaSystems.Application.Classes
 {
-    public class ApplicatonInfo
+    
+    public static class ApplicatonInfo
     {
         public static string AppName { get { return System.Reflection.Assembly.GetEntryAssembly().GetName().Name; } }
 
@@ -13,6 +14,8 @@
         }
 
         static public User LoggedUser;
+        static public DBMS.SQL SQLdbms;
+
     }
 
 }

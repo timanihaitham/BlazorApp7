@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
 
 namespace HexaSystems.Application.Classes
 {
@@ -13,8 +12,24 @@ namespace HexaSystems.Application.Classes
 
         public static User CheckAndReturnUser(string Code, string PWD)
         {
-  
-            return new User();
+            User Usr = null;
+            using (SqlConnection Cn = new SqlConnection(ApplicatonInfo.SQLdbms.ConnectionString))
+            {
+                using (SqlCommand CM = new SqlCommand("SELECT * FROM ", Cn))
+                {
+                    Cn.Open();
+                    SqlDataReader DR = CM.ExecuteReader();
+                    if (DR.Read())
+                    {
+                        Usr = new User();
+                        Usr.UserID = (int)DR[0];
+                        Usr.Code = DR[1].ToString();
+                        Usr.Name = DR[2].ToString();
+                    }
+                    Cn.Close();
+                }
+            }
+            return Usr;
         }
     }
 }
