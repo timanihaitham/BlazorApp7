@@ -9,9 +9,9 @@
             transform: translate(-50%, -50%);" method="get" action="/fetchdata">
 
 
-
-        <Hex_Input Name="txtUser" PlaceHolder="User Code" MaxLength="10" Required="true"></Hex_Input>
+        <Hex_Input Name="txtUser" @bind="_UserCode" PlaceHolder="User Code" MaxLength="10" Required="true"></Hex_Input>
         <Hex_Input Name="txtPWD" Type="password" PlaceHolder="Password" MaxLength="40" Required="true"></Hex_Input>
+       
 
 
     <div align="center">
@@ -30,12 +30,10 @@
 </form>
 @code
 {
-    private string _UserCode = "",_UserPWD = "" ;
+    public string _UserCode { get; set; }
 
     private void _Login()
     {
-         
 
-    
     }
 }
